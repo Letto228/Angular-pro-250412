@@ -5,8 +5,8 @@
     "ng": "ng",
     "start:aot": "ng serve --configuration aot",
     "start:jit": "ng serve --configuration jit",
-    "build:aot": "ng build",
-    "build:jit": "ng build",
+    "build:aot": "ng build --configuration aot",
+    "build:jit": "ng build --configuration jit",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
