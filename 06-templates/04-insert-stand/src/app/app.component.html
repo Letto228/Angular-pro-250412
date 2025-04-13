@@ -1,14 +1,21 @@
 {{title}}
 
 <div>
-  <button (click)="onClickComponent()">Insert component</button>
+  <!-- <button (click)="onClickComponent()">Insert component</button> -->
   <button (click)="onClickTemplate(declaratedTemplateRef)">Insert template</button>
   <button (click)="onClickClear()">Clear</button>
 </div>
 
-<div #viewContainer></div>
+<ng-container #viewContainer></ng-container>
 
-<ng-template #declaratedTemplateRef>
+<ng-container *ngComponentOutlet="component$ | async; injector: appInjector"></ng-container>
+<!-- <ng-container *ngTemplateOutlet="declaratedTemplateRef; context: {$implicit: 'directive', name: 'Alex', city: 'Ryazan'}"></ng-container> -->
+
+<ng-template #declaratedTemplateRef let-test="$implicit" let-name="name" let-city="city">
+  {{name}}
+  {{city}}
+  {{test}}
+  {{title}}
   <h3>Its template</h3>
   <app-declarated></app-declarated>
 </ng-template>

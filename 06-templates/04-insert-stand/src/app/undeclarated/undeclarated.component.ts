@@ -1,4 +1,5 @@
-import { Component, ProviderToken, inject } from '@angular/core';
+import { Component, InjectionToken, ProviderToken, inject } from '@angular/core';
+import { nameToken } from '../name-token';
 
 @Component({
   selector: 'app-undeclarated',
@@ -6,5 +7,5 @@ import { Component, ProviderToken, inject } from '@angular/core';
   styleUrls: ['./undeclarated.component.css']
 })
 export class UndeclaratedComponent {
-  readonly name = inject('name' as unknown as ProviderToken<string>, {optional: true})
+  readonly name = inject(nameToken, {optional: true})
 }

@@ -1,4 +1,7 @@
-<div colory #coloryDirective="colory">
+<!-- <div colory #coloryDirective="colory"> -->
+<div colory>
   TEXT
 </div>
-<button (click)="coloryDirective.changeColor('green')"></button>
+<button (click)="coloryDirective?.changeColor('green')">
+  changeColor
+</button>

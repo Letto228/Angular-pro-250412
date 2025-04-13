@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>02Test</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="../01-angular-elemment/dist/angular-element.js"></script>
+  <!-- <script src="angular-element.js"></script> -->
+</head>
+<body>
+  <custom-hello name="Egor">
+    Its content
+  </custom-hello>
+
+  <script>
+    const customElement = document.querySelector('custom-hello');
+
+    customElement.addEventListener('submitClick', event => {
+        console.log(event.detail)
+    })
+
+    setTimeout(() => {
+        customElement.innerHTML = 'New content';
+    }, 3000)
+  </script>
+</body>
+</html>
